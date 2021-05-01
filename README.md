@@ -31,10 +31,10 @@
 &nbsp; &nbsp; **NetworkingFramework**
 | Method  | Params  | Completion |
 | :------------ |:---------------:|:-----:|
-| request      | stringURL: String, method: HTTPMethod, headers: StringsDictionary?,<br/> parameters: Dictionary? | Data?, URLResponse?, Error? |
-| request      | stringURL: String, method: HTTPMethod, headers: StringsDictionary?,<br/> parameters: Dictionary?, validator: ClosedRange<Int>? | Result<Dictionary, NetworkingError> |
-| request      | stringURL: String, method: HTTPMethod, headers: StringsDictionary?,<br/> parameters: Dictionary?, decodingType: Codable.Type,<br/> decoder: JSONDecoder?, validator: ClosedRange<Int>? | Result<T, NetworkingError> |
-| request      | request: Request, decodingType: Codable.Type,<br/> decoder: JSONDecoder?, validator: ClosedRange<Int>?,  | Result<T, NetworkingError> |
+| request      | stringURL: String, method: HTTPMethod, <br/>headers: StringsDictionary?,<br/> parameters: Dictionary? | Data?, URLResponse?, Error? |
+| request      | stringURL: String, method: HTTPMethod, <br/>headers: StringsDictionary?,<br/> parameters: Dictionary?, validator: ClosedRange<Int>? | Result<Dictionary, NetworkingError> |
+| request<T: Codable>      | stringURL: String, method: HTTPMethod, <br/>headers: StringsDictionary?, parameters: Dictionary?, decodingType: T.Type, decoder: JSONDecoder?, validator: ClosedRange<Int>? | Result<T, NetworkingError> |
+| request<T: Codable>      | request: Request, decodingType: Codable.Type,<br/> decoder: JSONDecoder?, validator: ClosedRange<Int>?,  | Result<T, NetworkingError> |
 | upload //multipart | stringURL: String, objects: [Uploadables],<br/> headers: [String: String]?, parameters: [String: String]? | Data?, URLResponse?, Error? |
 
 ----
